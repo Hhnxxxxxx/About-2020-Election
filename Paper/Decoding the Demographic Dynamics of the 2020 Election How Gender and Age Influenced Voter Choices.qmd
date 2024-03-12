@@ -189,6 +189,24 @@ ces2020_cleaned |>
 
 ```
 
+## Measurement
+
+The process from observing phenomena in the world to creating an entry in the cleaned CES dataset typically follows a structured pathway:
+
+- `Survey Design`: The Cooperative Election Study designs a questionnaire that captures the essential information about voter preferences and demographics.
+
+- `Data Collection`: Individuals from various demographics across the United States participate in the survey, providing their responses on who they voted for and their personal information like age and gender.
+
+- `Data Processing`: The responses from these surveys are then cleaned, which involves removing incomplete entries, standardizing responses, and addressing any inconsistencies in the data.
+
+- `Categorization`: Respondents' ages are categorized into generational cohorts, such as Millennials or Baby Boomers, based on their year of birth, and responses to voter preferences are categorized as either 'Biden' or 'Trump'.
+
+- `Compilation into Dataset`: These processed and categorized responses form the basis of the cleaned CES dataset, where each entry represents an individual’s data from the survey, structured for analysis.
+
+- `Analysis`: Researchers use the cleaned CES dataset to conduct various analyses, such as logistic regression, to understand the relationship between demographics and voter preferences in the 2020 U.S. Presidential Election.
+
+Each entry in the cleaned CES dataset thus reflects a unique combination of a respondent’s demographic information and their reported voting behavior, transformed from a real-world phenomenon into structured data ready for analysis.
+
 # Model
 
 ```{r}
@@ -234,11 +252,16 @@ The goal of our analysis was to understand the factors influencing voting behavi
 
 The logistic regression model can be mathematically represented as:
 
-$$
-\log\left(\frac{P(Y=1)}{1 - P(Y=1)}\right) = \beta_0 + \beta_1 \times \text{Gender} + \beta_2 \times \text{AgeGroup}
-$$
+You can write your equation with a label like this:
 
-Where:
+```{=latex}
+\begin{equation}
+\log\left(\frac{P(Y=1)}{1 - P(Y=1)}\right) = \beta_0 + \beta_1 \times \text{Gender} + \beta_2 \times \text{AgeGroup}.
+\label{eq-logitModel}
+\end{equation}
+```
+
+In equation (\ref{eq-logitModel}):
 
 - `Y` is a binary response variable, with $1$ indicating a vote for Biden and $0$ indicating a vote for Trump.
 - `Gender` is a binary predictor, with 'Male' and 'Female' as the categories.
